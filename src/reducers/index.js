@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-
-const rootReducer = combineReducers({
-  state: (state = {}) => state
+import BooksReducer from './reducer_books';
+const rootReducer = combineReducers({ //this is the mapping of the state
+    books: BooksReducer;
 });
 
 export default rootReducer;
