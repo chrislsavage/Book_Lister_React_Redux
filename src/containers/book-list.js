@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';  //lowercase function
 
-export default class BookList extends Component {
+
+class BookList extends Component {
   renderList() {
     return this.props.books.map((book) => {
       return (
@@ -18,4 +20,13 @@ export default class BookList extends Component {
   };
 }
 
+
+function mapStateToProps(){
+  //what ever is return will show up as props inside of BookLIst
+  return {
+    books: state.books
+  }
+}
+
+export default connect(mapStateToProps)(BookList)
 // a container(smart component) (instead of component) is a react compoenent that has a direct connection to the state managed by redux
